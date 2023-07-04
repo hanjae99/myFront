@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>inline css</title>
+    <style>
+      /* h1 {
+        padding: 10px;
+        background-color: #222;
+        color: #fff;
+      } */
+
+      body {
+        font-family: Georgia, "Times New Roman", Times, serif;
+      }
+
+      p {
+        font-style: italic;
+      }
+
+      p {
+        font-style: normal;
+      }
+
+      .italic {
+        font-style: oblique;
+      }
+
+      .accent {
+        border: 1px solid #000;
+      }
+
+      .bg {
+        background-color: #ddd;
+        font-size: 150%;
+        font-weight: 800;
+      }
+
+      #container {
+        width: 500px;
+        margin: 10px auto;
+        padding: 10px;
+        border: 1px solid #000;
+      }
+
+      p,
+      h1 {
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3em;
+      }
+    </style>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1 class="accent bg">레드향</h1>
+      <p style="color: blue">
+        껍질에 붉은 빛이 돌아 <span class="bg">레드향</span>이라 불린다.
+      </p>
+      <p>레드향은 한라봉과 귤을 교배한 것으로...</p>
+      <p class="italic">비타민C와 비타민P가 풍부...</p>
+    </div>
+  </body>
+</html>

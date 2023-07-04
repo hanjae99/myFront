@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <h1>회원가입을 환영합니다.</h1>
+      <form action="">
+        <fieldset>
+          <legend>사용자 정보</legend>
+          <ul>
+            <li>
+              <label for="uid">아이디</label>
+              <input type="text" id="uid" required autofocus />
+            </li>
+            <li>
+              <label for="uemail">이메일</label>
+              <input type="email" name="" id="uemail" />
+            </li>
+            <li>
+              <label for="upw">비밀번호</label>
+              <input
+                type="password"
+                name=""
+                id="upw"
+                placeholder="문자와 숫자, 특수기호 포함"
+              />
+            </li>
+            <li>
+              <label for="upw-check">비밀번호 확인</label>
+              <input type="password" name="" id="upw-check" />
+            </li>
+            <li>
+              <label for="pass">가입 경로</label>
+              <select id="pass" multiple>
+                <option value="blog">블로그</option>
+                <option value="search">검색</option>
+                <option value="sns">SNS</option>
+                <option value="else">기타</option>
+              </select>
+            </li>
+          </ul>
+        </fieldset>
+        <fieldset>
+          <legend>이벤트와 새로운 소식</legend>
+          <input type="radio" name="mailing" id="mail_y" />
+          <label for="mail_y">메일 수신</label>
+          <input type="radio" name="mailing" id="mail_n" checked />
+          <label for="mail_n">메일 수신 안 함</label>
+        </fieldset>
+        <fieldset>
+          <legend>숫자 입력 필드</legend>
+          <label><input type="checkbox" value="s_3" />선물용 3kg</label>
+          <input type="number" min="0" max="5" readonly />개 (최대 5개)
+          <br />
+          <label><input type="checkbox" value="s_5" />선물용 5kg</label>
+          <input type="number" min="0" max="3" />개 (최대 3개)
+          <br />
+          <label><input type="checkbox" value="f_3" />가정용 3kg</label>
+          <input type="range" min="0" max="5" value="1" />
+          <br />
+          <label><input type="checkbox" value="f_5" />가정용 5kg</label>
+          <input type="range" min="0" max="3" value="" />
+        </fieldset>
+        <fieldset>
+          <legend>날짜 입력</legend>
+          <input type="date" />
+          <input type="month" />
+          <input type="week" />
+          <br />
+          <input type="time" />
+          <input type="datetime" />
+          <input type="datetime-local" />
+        </fieldset>
+        <div id="buttons">
+          <!-- <input type="submit" value="가입하기" />
+          <input type="reset" value="취소" /> -->
+          <button type="submit">가입하기</button>
+          <button type="reset">취소하기</button>
+        </div>
+        <fieldset>
+          <legend>로그인</legend>
+          <label>아이디: <input type="text" id="user_id" size="10" /></label>
+          <label
+            >비밀번호: <input type="password" id="user_pw" size="12"
+          /></label>
+          <input type="image" src="images/login.png" alt="로그인" />
+          <input
+            type="button"
+            value="공지창 열기"
+            onclick="window.open('notice.html')"
+          />
+        </fieldset>
+        <fieldset>
+          <legend>반품 정보</legend>
+          <p>
+            만일 수령한 상품에 문제가 있다면 즉시 <b>반품 신청</b>해 주세요.
+          </p>
+          <p>반품 신청시 상품의 상태를 사진으로 첨부해 주세요.</p>
+          <label for="memo">메모</label>
+          <textarea name="" id="memo" cols="40" rows="5"></textarea>
+          <hr />
+          <input type="file" />
+          <input type="hidden" name="email" value="abc@abc.com" />
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bgclip</title>
+    <style>
+      .desc {
+        border: 5px dotted black;
+        background-color: coral;
+        width: 350px;
+        height: auto;
+        padding: 20px;
+        margin-right: 20px;
+        float: left;
+      }
+      #clip-padding {
+        background-clip: padding-box;
+      }
+      #clip-content {
+        background-clip: content-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="desc" id="clip-border">
+        <h1>제목1</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem ex illo
+          voluptatem, maiores recusandae magnam sit impedit dicta soluta nobis
+          aut eius dignissimos explicabo deserunt et quae a reiciendis
+          repudiandae?
+        </p>
+      </div>
+      <div class="desc" id="clip-padding">
+        <h1>제목2</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. In magni
+          adipisci, ex repudiandae hic soluta molestias saepe labore veritatis
+          a, doloremque accusamus ut porro! Saepe cumque illo minus eaque
+          excepturi.
+        </p>
+      </div>
+      <div class="desc" id="clip-content">
+        <h1>제목3</h1>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo,
+          nobis! Alias odio ex cupiditate similique est. Adipisci reprehenderit
+          quibusdam eaque nam molestias. Animi blanditiis obcaecati cum
+          excepturi nesciunt iure incidunt!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bg4</title>
+    <style>
+      #container {
+        width: 1100px;
+        margin: 50px auto;
+      }
+      .box {
+        float: left;
+        border: 1px solid black;
+        width: 300px;
+        height: 300px;
+        margin: 20px;
+        background: url("/images/bg4.jpg") no-repeat left top;
+      }
+      h2 {
+        margin-top: 0;
+      }
+      #bg1 {
+        background-size: auto;
+        text-align: right;
+      }
+      #bg2 {
+        background-size: 200px;
+        text-align: right;
+      }
+      #bg3 {
+        background-size: 50%;
+        text-align: right;
+      }
+      #bg4 {
+        background-size: 100% 100%;
+        text-align: right;
+      }
+      #bg5 {
+        background-size: contain;
+        text-align: right;
+      }
+      #bg6 {
+        background-size: cover;
+        text-align: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="box" id="bg1"><h2>auto</h2></div>
+      <div class="box" id="bg2"><h2>200px</h2></div>
+      <div class="box" id="bg3"><h2>50%</h2></div>
+      <div class="box" id="bg4"><h2>100% 100%</h2></div>
+      <div class="box" id="bg5"><h2>contain</h2></div>
+      <div class="box" id="bg6"><h2>cover</h2></div>
+    </div>
+  </body>
+</html>

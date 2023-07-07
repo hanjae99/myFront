@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>layout2</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-align: center;
+      }
+      header {
+        width: 1200px;
+        height: 120px;
+        background-color: aqua;
+        line-height: 120px;
+      }
+      #leftside {
+        float: left;
+        width: 250px;
+        height: 600px;
+        background-color: brown;
+        line-height: 600px;
+      }
+      section {
+        float: left;
+        width: 800px;
+        height: 600px;
+        background-color: rgb(255, 238, 0);
+        line-height: 600px;
+      }
+      #rightside {
+        float: left;
+        width: 150px;
+        height: 600px;
+        background-color: chocolate;
+        line-height: 600px;
+      }
+      footer {
+        width: 1200px;
+        height: 100px;
+        background-color: rgb(225, 102, 221);
+        line-height: 100px;
+        clear: both;
+      }
+    </style>
+  </head>
+  <body>
+    <header><h1>헤더</h1></header>
+    <aside id="leftside"><h3>사이드바</h3></aside>
+    <section><h2>본문</h2></section>
+    <aside id="rightside"><h3>사이드바</h3></aside>
+    <footer><h2>푸터</h2></footer>
+  </body>
+</html>

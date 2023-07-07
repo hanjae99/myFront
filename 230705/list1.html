@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>목록 스타일</title>
+  </head>
+  <style>
+    ul {
+      list-style-type: none;
+    }
+
+    ol {
+      list-style-type: upper-alpha;
+    }
+
+    .book1 {
+      /* list-style-image: url(images/dot.png);
+      list-style-position: inside; */
+      list-style: url(images/dot.png) inside;
+    }
+  </style>
+  <body>
+    <h1>도서 시리즈</h1>
+    <ul class="book1">
+      <li>Do it! 시리즈</li>
+      <li>첫 코딩 시리즈</li>
+      <li>하다 시리즈</li>
+    </ul>
+    <ol>
+      <li>Do it! 시리즈</li>
+      <li>첫 코딩 시리즈</li>
+      <li>하다 시리즈</li>
+    </ol>
+  </body>
+</html>

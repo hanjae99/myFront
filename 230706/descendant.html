@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>descendant</title>
+    <style>
+      body {
+        background-color: aliceblue;
+      }
+      section {
+        width: 600px;
+        margin: 20px auto;
+      }
+      p {
+        width: 500px;
+        padding: 10px;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        line-height: 2;
+      }
+      /* 모든 후손들의 색상 변경 */
+      section p {
+        color: blue;
+      }
+      /* 자식만 색상 변경 */
+      section > p {
+        color: red;
+      }
+      /* 인접 (하위)형제들 중 첫번째 색상 변경 */
+      h1 + p {
+        color: green;
+      }
+      div > p {
+        color: red;
+      }
+      h1 ~ p,
+      h1 ~ div > p {
+        color: blueviolet;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>예약방법 및 사용요금</h1>
+      <p>아직 온라인 예약 신청이... <br />전화..으로 문의 바랍니다</p>
+      <div>
+        <p>가족실(2~4인) : 60000원/일</p>
+        <p>도미토리(4인 공용) : 25000원/일</p>
+      </div>
+    </section>
+  </body>
+</html>

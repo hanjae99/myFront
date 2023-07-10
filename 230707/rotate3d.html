@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rotate3d</title>
+    <style>
+      #container {
+        width: 1000px;
+        margin: 20px auto;
+        text-align: center;
+      }
+      .origin {
+        width: 100px;
+        height: 100px;
+        margin: 20px;
+        display: inline-block;
+        border: 1px solid black;
+        perspective: 200px;
+      }
+      .origin div {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+        transition: all 300ms;
+      }
+      #rotatex:hover {
+        transform: rotateX(55deg);
+      }
+      #rotatey:hover {
+        transform: rotateY(55deg);
+      }
+      #rotatez:hover {
+        transform: rotateZ(55deg);
+      }
+      #rotatexyz:hover {
+        transform: rotate3d(2.5, 1.2, -1.5, 55deg);
+      }
+      h1 {
+        width: 500px;
+        height: 80px;
+        background-color: #222;
+        color: white;
+        text-align: center;
+        line-height: 80px;
+        font-weight: bold;
+        margin: 0 auto;
+        transform: skewX(15deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1>CSS 변형 함수 익히기</h1>
+      <div class="origin">
+        <div id="rotatex"></div>
+      </div>
+      <div class="origin">
+        <div id="rotatey"></div>
+      </div>
+      <div class="origin">
+        <div id="rotatez"></div>
+      </div>
+      <div class="origin">
+        <div id="rotatexyz"></div>
+      </div>
+    </div>
+  </body>
+</html>

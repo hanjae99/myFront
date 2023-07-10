@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navi</title>
+    <style>
+      .navi ul li {
+        display: inline-block;
+        width: 150px;
+        padding: 10px;
+        list-style-type: none;
+      }
+      .navi a:link,
+      .navi a:visited {
+        display: block;
+        font-size: 14px;
+        padding: 10px;
+        text-decoration: none;
+        text-align: center;
+      }
+      .navi a:hover,
+      .navi a:focus {
+        background-color: #222;
+        color: #fff;
+        box-shadow: 0 5px 20px 1px gray;
+        border-radius: 5px;
+      }
+      .navi a:active {
+        background-color: #f00;
+      }
+      hr {
+        margin: 0px 30px;
+      }
+      #container {
+        width: 400px;
+        height: auto;
+        margin: 30px auto;
+      }
+      #container div {
+        border: 1px solid black;
+        border-radius: 5px;
+        margin-bottom: 20px;
+        padding: 10px;
+      }
+      #intro:target {
+        background-color: #0069e0;
+        color: #fff;
+      }
+      #room:target {
+        background-color: #0069e0;
+        color: #fff;
+      }
+      #reservation:target {
+        background-color: #0069e0;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navi">
+      <ul>
+        <li><a href="#intro">이용안내</a></li>
+        <li><a href="#room">객실소개</a></li>
+        <li><a href="#reservation">예약방법 및 요금</a></li>
+        <li><a href="reserve.html">예약하기</a></li>
+      </ul>
+      <hr />
+    </nav>
+    <div id="container">
+      <div id="intro" class="contents">
+        <h2>이용안내</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi,
+          nesciunt! Doloremque optio, atque dolorem, nihil harum labore sequi at
+          fuga eveniet asperiores, vel quibusdam. Sint officiis modi asperiores
+          rem enim!
+        </p>
+      </div>
+      <div id="room" class="contents">
+        <h2>객실소개</h2>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea
+          blanditiis molestiae quam commodi odit vitae sit doloremque ut
+          corporis? Aut tempore nihil accusantium maiores possimus
+          exercitationem iusto ab nesciunt quas.
+        </p>
+      </div>
+      <div id="reservation" class="contents">
+        <h2>예약방법 및 요금</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate
+          nulla illum, animi iste excepturi iure vero officia dolorum
+          consectetur praesentium perspiciatis cumque aut veritatis eaque illo
+          suscipit amet. Culpa, dolor!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

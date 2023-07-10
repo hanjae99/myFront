@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>translate</title>
+    <style>
+      #container {
+        width: 1000px;
+        height: 200px;
+        margin: 20px auto;
+      }
+      .origin {
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        display: inline-block;
+        margin: 40px;
+        perspective: 300px;
+      }
+      .origin > div {
+        width: 200px;
+        height: 200px;
+        background: url("../images/sunset.jpg") no-repeat;
+        background-size: cover;
+      }
+      #movex:hover {
+        /* transform: translateX(50px); */
+        /* transform: scaleX(2); */
+        transform: rotateX(50deg);
+        /* transform: skewX(30deg); */
+      }
+      #movey:hover {
+        /* transform: translateY(50px); */
+        /* transform: scaleY(1.8); */
+        transform: rotateY(50deg);
+        /* transform: skewY(30deg); */
+      }
+      #movexy:hover {
+        /* transform: translate(50px, 50px); */
+        /* transform: scale(0.7); */
+        transform: rotate(50deg);
+        /* transform: skew(30deg, 30deg); */
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <div class="origin">
+        <div id="movex"></div>
+      </div>
+      <div class="origin">
+        <div id="movey"></div>
+      </div>
+      <div class="origin">
+        <div id="movexy"></div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>reserve</title>
+    <style>
+      ul {
+        list-style: none;
+      }
+      li {
+        margin: 10px;
+      }
+      #signup input:checked + label {
+        color: red;
+        font-weight: bold;
+      }
+      #signup input:not([type="radio"]) {
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        padding: 5px;
+        width: 200px;
+        display: inline-block;
+      }
+      #signup input:not([type="radio"]):hover {
+        border-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="" id="signup">
+      <fieldset>
+        <legend>개인정보</legend>
+        <ul>
+          <li>
+            <label for="fullname">이름</label>
+            <input type="text" id="fullname" required />
+          </li>
+          <li>
+            <label for="phone">전화번호</label>
+            <input type="tel" id="phone" required />
+          </li>
+        </ul>
+      </fieldset>
+      <fieldset>
+        <legend>객실형태</legend>
+        <ul>
+          <li>
+            <input type="radio" name="room" id="basic" />
+            <label for="basic">기본형(최대 2인)</label>
+          </li>
+          <li>
+            <input type="radio" name="room" id="family" />
+            <label for="family">가족형(최대 8인)</label>
+          </li>
+        </ul>
+      </fieldset>
+      <br />
+      <button type="submit">예약하기</button>
+      <button type="reset">취소</button>
+    </form>
+  </body>
+</html>

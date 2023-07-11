@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>modal</title>
+    <link rel="stylesheet" href="../css/login.css" />
+  </head>
+  <body>
+    <button id="show">Log in!</button>
+    <div id="modal">
+      <form>
+        <h3>로그인</h3>
+        <div>
+          <label>ID</label>
+          <input type="text" name="" id="" />
+        </div>
+        <div>
+          <label for="">Password</label>
+          <input type="password" name="" id="" />
+        </div>
+        <div>
+          <button type="submit">Log in!</button>
+          <button type="reset" id="hide">Cancel</button>
+        </div>
+      </form>
+    </div>
+    <script type="text/javascript">
+      let btn = document.getElementById("show");
+      btn.addEventListener("click", function (evt) {
+        document.getElementById("modal").style.display = "block";
+      });
+      let btnHide = document.getElementById("hide");
+      btnHide.addEventListener("click", function (evt) {
+        document.getElementById("modal").style.display = "none";
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ani3</title>
+    <style>
+      .box {
+        width: 200px;
+        height: 200px;
+        margin: 50px auto;
+        animation: rotate 2s infinite, background 3s infinite alternate;
+      }
+      @keyframes rotate {
+        from {
+          transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+        }
+        50% {
+          transform: perspective(120px) rotateX(-180deg) rotateY(0deg);
+        }
+        to {
+          transform: perspective(120px) rotateX(-180deg) rotateY(-180deg);
+        }
+      }
+      @keyframes background {
+        from {
+          background-color: aquamarine;
+        }
+        50% {
+          background-color: blue;
+        }
+        to {
+          background-color: blueviolet;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+  </body>
+</html>

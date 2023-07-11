@@ -18,14 +18,18 @@
       #box1 {
         background-color: aqua;
         border: 1px solid transparent;
-        animation-name: shape;
-        animation-duration: 3s;
+        /* animation-name: shape;
+        animation-duration: 3s; */
+        animation: shape 3s infinite alternate-reverse;
       }
       #box2 {
         background-color: blueviolet;
         border: 1px solid transparent;
-        animation-name: rotate;
+        /* animation-name: rotate;
         animation-duration: 3s;
+        animation-direction: alternate-reverse;
+        animation-iteration-count: 2; */
+        animation: rotate 3s infinite alternate-reverse;
       }
       @keyframes shape {
         from {

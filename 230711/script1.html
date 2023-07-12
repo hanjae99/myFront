@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>script1</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      .name {
+        color: aqua;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="test" id="heading">자바스크립트</h1>
+    <p class="test" id="text">위 텍스트를 클릭해보세요</p>
+    <script>
+      var heading = document.querySelector(".test");
+      heading.onclick = function () {
+        heading.style.color = "red";
+      };
+      // alert("안녕하세요!");
+      // var reply = confirm("변경하시겠습니까?");
+      // console.log(reply);
+
+      var name = prompt("이름을 입력하세요.", "홍길동");
+      console.log(name);
+      document.write("<b class=name><big>" + name + "</big></b>");
+    </script>
+  </body>
+</html>

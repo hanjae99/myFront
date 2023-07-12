@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>seat</title>
+    <style>
+      .box {
+        border: 1px solid black;
+        border-collapse: collapse;
+      }
+      td {
+        background-color: gray;
+        color: white;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>자리 배치도</h1>
+    <script>
+      let n1 = prompt("입장객은 몇명인가요?");
+      let n2 = prompt("한 줄에 몇명씩 앉나요?");
+      let i = 1;
+
+      document.write("<table class=box><tr>");
+      while (i <= n1) {
+        if (i % n2 === 0) {
+          if (i === n1) {
+            break;
+          }
+          document.write("<td>좌석" + i + "</td></tr><tr>");
+          i++;
+          continue;
+        }
+        document.write("<td>좌석" + i + "</td>");
+        i++;
+      }
+      document.write("</tr></table>");
+    </script>
+  </body>
+</html>

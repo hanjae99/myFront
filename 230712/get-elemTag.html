@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getElemTag</title>
+  </head>
+  <body>
+    <ul>
+      <li>List item 1</li>
+      <li>List item 2</li>
+      <li>List item 3</li>
+      <li>List item 4</li>
+      <li>List item 5</li>
+    </ul>
+    <script>
+      const list = document.getElementsByTagName("ul")[0];
+      const allItems = list.getElementsByTagName("li");
+
+      for (let i = 0; i < allItems.length; i++) {
+        // alert(allItems[i].firstChild.data);
+        alert(allItems[i].innerHTML);
+      }
+      // list.onmouseover = () => {
+      //   documet.getElementsByTagName("li").style.backgroundColor = "red";
+      // };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event1</title>
+    <style>
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: center;
+      }
+      li {
+        margin: 5px;
+      }
+      a {
+        display: block;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 10px 50px;
+        position: relative;
+      }
+      a:link,
+      a:visited {
+        text-decoration: none;
+        color: black;
+      }
+      a:hover {
+        transition: all 1s;
+        background-color: #ccc;
+        box-shadow: 2px 2px 5px #222;
+      }
+      #box {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 700px;
+        height: 500px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li>
+        <a
+          href="#"
+          onclick="alert('버튼을 클릭했습니다.'); changeColor('green')"
+          >green</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          onclick="alert('버튼을 클릭했습니다.'); changeColor('orange')"
+          >orange</a
+        >
+      </li>
+      <li>
+        <a
+          href="#"
+          onclick="alert('버튼을 클릭했습니다.'); changeColor('purple')"
+          >purple</a
+        >
+      </li>
+    </ul>
+    <div id="box"></div>
+    <script>
+      function changeColor(color) {
+        let box = document.querySelector("#box");
+        box.style.backgroundColor = color;
+      }
+    </script>
+  </body>
+</html>

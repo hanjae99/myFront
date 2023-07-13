@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>var3</title>
+  </head>
+  <body>
+    <script>
+      var x = 10;
+      function displayNum() {
+        console.log("x is " + x);
+        console.log("y is " + y);
+        var y = 20;
+      }
+
+      displayNum();
+      var sum = addNumber(10, 20);
+      console.log(sum);
+      sum = 50;
+      console.log(sum);
+      var sum = 100;
+      console.log(sum);
+
+      function addNumber(num1, num2) {
+        return num1 + num2;
+      }
+    </script>
+  </body>
+</html>

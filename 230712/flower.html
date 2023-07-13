@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flower</title>
+    <style>
+      #container {
+        position: relative;
+        width: 400px;
+        height: auto;
+        padding: 15px;
+        margin: 0 auto;
+      }
+      .over {
+        position: absolute;
+        left: 5%;
+        top: 85%;
+      }
+      .detail {
+        display: none;
+      }
+    </style>
+    <script src="../js/detail.js" defer></script>
+  </head>
+  <body>
+    <div id="container">
+      <img src="../images/flower.jpg" alt="꽃" />
+      <button class="over" id="open">상세 설명 보기</button>
+
+      <div id="desc" class="detail">
+        <h3>등심 붓꽃</h3>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore eius
+          ratione molestias officiis, ut ipsa, omnis voluptate voluptatem
+          reiciendis, nemo amet adipisci molestiae cum neque? Accusamus nisi in
+          blanditiis culpa!
+        </p>
+        <button id="close">상세 설명 닫기</button>
+      </div>
+    </div>
+    <!-- <script>
+      document.querySelector("#open").onclick = () => {
+        document.querySelector("#desc").style.display = "block";
+        document.querySelector("#open").style.display = "none";
+      };
+
+      document.querySelector("#close").onclick = () => {
+        document.querySelector("#desc").style.display = "none";
+        document.querySelector("#open").style.display = "block";
+      };
+    </script> -->
+  </body>
+</html>

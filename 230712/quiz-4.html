@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>summulti</title>
+  </head>
+  <body>
+    <script>
+      const num1 = parseInt(prompt("첫번째 숫자를 입력하세요"));
+      const num2 = parseInt(prompt("두번째 숫자를 입력하세요"));
+
+      function sumMulti(x, y) {
+        // if (num1 === num2) {
+        //   result = num1 * num2;
+        //   return result;
+        // } else {
+        //   result = num1 + num2;
+        //   return result;
+        // }
+        x === y ? console.log(x * y) : console.log(x + y);
+      }
+      // console.log(sumMulti());
+      sumMulti(num1, num2);
+    </script>
+  </body>
+</html>

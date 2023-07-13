@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>elemMod</title>
+  </head>
+  <body>
+    <img src="../images/cup-1.jpg" alt="" id="image" />
+    <div id="ex">div가 선언된 곳</div>
+    <a href="#" onclick="get()">div의 내용 출력하기</a><br />
+    <a href="#" onclick="set('div의 내용 변경')">div의 내용 변경하기</a><br />
+    <a href="#" onclick="changeImg()">이미지 변경하기</a>
+    <script>
+      function get() {
+        const value = document.getElementById("ex").innerHTML;
+        document.write("<h2>" + value + "</h2>");
+      }
+      function set(msg) {
+        document.getElementById("ex").innerHTML = msg;
+      }
+      function changeImg() {
+        document.getElementById("image").src = "../images/cup-2.jpg";
+      }
+    </script>
+  </body>
+</html>

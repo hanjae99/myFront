@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <script>
+      let card1 = { suit: "하트", rank: "A" };
+      console.log(card1);
+      console.log(card1.suit + card1.rank);
+      console.log(card1["suit"]);
+
+      function Card(suit, rank) {
+        this.suit = suit;
+        this.rank = rank;
+      }
+      const card2 = new Card("클로버", "Q");
+      console.log(card2);
+
+      const card3 = Object.create(Object.prototype, {
+        suit: {
+          value: "스페이드",
+          writable: true,
+          enumerable: true,
+          configurable: true,
+        },
+        rank: {
+          value: "8",
+          writable: true,
+          enumerable: true,
+          configurable: true,
+        },
+      });
+      console.log(card3);
+
+      // ec6
+      class Card2 {
+        #suit = "";
+        #rank = "";
+
+        constructor(suit, rank) {
+          this.#suit = suit;
+          this.#rank = rank;
+        }
+        get suit() {
+          return this.#suit;
+        }
+        get rank() {
+          return this.#rank;
+        }
+        set suit(value) {
+          const str = value.charAt(0).toUpperCase() + value.substring(1);
+          this.#suit = str;
+        }
+        set rank(value) {
+          this.#rank = value;
+        }
+
+        print() {
+          console.log(`${this.#suit} ${this.#rank}`);
+        }
+      }
+      const card4 = new Card2("다이아몬드", "3");
+      console.log(card4);
+      card4.print();
+      console.log(card4.suit);
+
+      card4.suit = "abc";
+      console.log(card4.suit);
+
+      card4.rank = "A";
+      console.log(card4.rank);
+
+      class Foo {
+        x = 1;
+        #p = 0; // private
+        static y = 20;
+        static #sp = 30; // static private
+
+        bar() {
+          this.#p = 10;
+          return this.#p;
+        }
+
+        constructor(str) {
+          this.str = str;
+        }
+
+        showandaddsp() {
+          Foo.#sp++;
+          console.log(this.str, Foo.#sp);
+        }
+      }
+
+      const foo = new Foo("1번");
+      const foo2 = new Foo("2번");
+      console.log(foo);
+      console.log(foo.bar());
+      console.log(foo.x);
+      console.log(Foo.y);
+      console.log("----");
+      foo.showandaddsp();
+      foo2.showandaddsp();
+      foo.showandaddsp();
+      foo2.showandaddsp();
+      console.log("foo 3번 추가시점");
+      const foo3 = new Foo("3번");
+      foo.showandaddsp();
+      foo2.showandaddsp();
+      foo3.showandaddsp();
+      foo.showandaddsp();
+      foo2.showandaddsp();
+      foo3.showandaddsp();
+
+      // let person = {
+      //   'first_name': 'gildong',
+      //   'last-name': 'hong',
+      //   gender: 'mail'
+      // };
+      // person['first_name'] = 'java';
+      // console.log(person.first_name);
+
+      // person.age = 20;
+      // console.log(person.age);
+
+      // delete person.gender;
+      // console.log(person);
+
+      // for (let prop in person) {
+      //   console.log(prop, ':', person[prop]);
+      // }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event</title>
+    <style>
+      h1 {
+        border: 1px solid black;
+        background-color: #ccc;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>당첨자 발표</h1>
+    <script>
+      const seed = prompt("전체 응모자 수: ");
+      const winner = prompt("당첨자 수: ");
+
+      document.write("전체 응모자 수: " + seed + "명<br>");
+      document.write("당첨자: ");
+      const picked = Math.floor(Math.random() * seed + 1);
+    </script>
+  </body>
+</html>

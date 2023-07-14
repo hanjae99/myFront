@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div><button id="hitbtn">hit</button></div>
+    <script>
+      const increase = function (num) {
+        return ++num;
+      };
+      const decrease = function (num) {
+        return --num;
+      };
+
+      const predicate = { increase, decrease };
+
+      function makeCount(predicate) {
+        let num = 0;
+        return function () {
+          num = predicate(num);
+          return num;
+        };
+      }
+
+      let increaser = makeCount(predicate.increase);
+      let decreaser = makeCount(predicate.decrease);
+
+      console.log(increaser());
+      console.log(increaser());
+      console.log(increaser());
+
+      console.log(decreaser());
+      console.log(decreaser());
+      console.log(decreaser());
+
+      document.write("<br>" + increaser());
+      function hit() {
+        document.body.append(increaser() + " ");
+      }
+
+      document.querySelector("#hitbtn").onclick = hit;
+    </script>
+  </body>
+</html>

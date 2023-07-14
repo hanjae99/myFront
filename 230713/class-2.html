@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Circle(center, radius) {
+      this.center = center;
+      this.radius = radius;
+      this.area = function(){
+        return Math.PI*this.radius*this.radius;
+      };
+    }
+
+    const c1 = new Circle(0, 2);
+    console.log(c1.area());
+    const c2 = new Circle({x:1,y:1},1.0);
+    console.log(c2);
+
+    function Circle2(center, radius) {
+      this.center = center;
+      this.radius = radius;
+    }
+    Circle2.prototype.area = function() {
+      return Math.PI*this.radius*this.radius;
+    }
+
+    const c21 = new Circle2(0,2);
+    console.log(c21);
+    const c22 = new Circle2({x:0,y:22},24)
+    console.log(c22);
+    console.log(c22.area());
+
+
+
+  
+
+
+  </script>
+</body>
+</html>

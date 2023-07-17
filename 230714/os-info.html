@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>운영체제별 스크린 정보 얻기</title>
+  </head>
+  <body>
+    <script>
+      const info = navigator.userAgent.toLowerCase();
+      let osname = null;
+      if (info.indexOf("windows") >= 0) {
+        osname = "window";
+        console.log(osname);
+      } else if (info.indexOf("macintosh") >= 0) {
+        osname = "mac";
+        console.log(osname);
+      } else if (info.indexOf("iphone") >= 0) {
+        osname = "iphone";
+        console.log(osname);
+      } else if (info.indexOf("android") >= 0) {
+        osname = "android";
+        console.log(osname);
+      }
+
+      const scr = screen;
+      const scr_w = scr.width;
+      const scr_h = scr.height;
+      const avail_w = scr.availWidth;
+      const avail_h = scr.availHeight;
+      // document.write("모니터 해상도 너비: " + scr_w + "px<br>");
+      document.write(`모니터 해상도 너비: ${scr_w}px<br>`);
+      document.write("모니터 해상도 높이: " + scr_h + "px<br>");
+      document.write(`UI영역제외 너비: ${avail_w}px<br>`);
+      document.write(`UI영역제외 높이: ${avail_h}px<br>`);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz2</title>
+    <style>
+      #timebtn {
+        border: 1px dotted #ccc;
+        border-radius: 10px;
+        padding: 20px 30px;
+        display: block;
+        margin: 100px auto;
+        background-color: white;
+      }
+      #timebtn:hover {
+        background-color: #ccc;
+        border: 1px solid #9a9a9a;
+        box-shadow: 2px 2px 10px black;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="timebtn">현재 시간 보기</button>
+    <script>
+      function openPopup(doc, name, x, y) {
+        let left = (screen.availWidth - x) / 2;
+        let top = (screen.availHeight - y) / 2;
+        let opt = `left=${left}, top=${top}, width=${x}, height=${y}`;
+        window.open(doc, name, opt);
+      }
+      document
+        .getElementById("timebtn")
+        .addEventListener("click", () =>
+          openPopup("quiz1.html", "popup", 500, 400)
+        );
+    </script>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>location</title>
+    <style>
+      #display {
+        width: 600px;
+        border: 1px solid black;
+        padding: 10px;
+        margin-bottom: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="display">
+      <script>
+        document.write(`<p><b>location.href: ${location.href}</b></p><br>`);
+        document.write(`<p><b>location.host: ${location.host}</b></p><br>`);
+        document.write(
+          `<p><b>location.protocol: ${location.protocol}</b></p><br>`
+        );
+      </script>
+    </div>
+    <button onclick="location.replace('https://www.naver.com');">
+      네이버 홈페이지 이동
+    </button>
+  </body>
+</html>

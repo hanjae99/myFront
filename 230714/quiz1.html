@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz1</title>
+    <style>
+      #container {
+        display: flex;
+        justify-content: center;
+        margin-top: 100px;
+        text-align: center;
+        line-height: 2em;
+      }
+      .display {
+        font-size: 1.5em;
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <p>현재시각 <br /><span id="current" class="display"></span></p>
+    </div>
+    <script>
+      setInterval(displayNow, 1000);
+      function displayNow() {
+        let currentTime = new Date().toLocaleTimeString();
+
+        document.getElementById("current").innerHTML = currentTime;
+      }
+    </script>
+  </body>
+</html>

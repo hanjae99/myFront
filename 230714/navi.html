@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>navi</title>
+    <style>
+      div {
+        font-size: 1.3em;
+        line-height: 1.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-body">
+      <h1>navi</h1>
+      <div>
+        appCodName: <span id="appCodeName"></span><br />
+        appName: <span id="appName"></span><br />
+        appVersion: <span id="appVersion"></span><br />
+        language: <span id="language"></span><br />
+        onLine: <span id="onLine"></span><br />
+        platform: <span id="platform"></span><br />
+        userAgent: <span id="userAgent"></span><br />
+        plugin: <span id="plugin"></span><br />
+        mimeTypes: <span id="mimeTypes"></span><br />
+        battery: <span id="battery"></span><br />
+      </div>
+    </div>
+    <script>
+      const appCodeName = window.navigator.appCodeName;
+      const appName = window.navigator.appName;
+      const appVersion = window.navigator.appVersion;
+      const language = navigator.language;
+      const onLine = navigator.onLine;
+      const platform = navigator.platform;
+      const userAgent = navigator.userAgent;
+      const plugin = navigator.plugin;
+      const mimeTypes = navigator.mimeTypes;
+      const battery = navigator.battery;
+
+      document.getElementById("appCodeName").innerHTML = appCodeName;
+      document.getElementById("appName").innerHTML = appName;
+      document.getElementById("appVersion").innerHTML = appVersion;
+      document.getElementById("language").innerHTML = language;
+      document.getElementById("onLine").innerHTML = onLine;
+      document.getElementById("platform").innerHTML = platform;
+      document.getElementById("userAgent").innerHTML = userAgent;
+      document.getElementById("plugin").innerHTML = plugin;
+      document.getElementById("mimeTypes").innerHTML = mimeTypes;
+      document.getElementById("battery").innerHTML = battery;
+    </script>
+  </body>
+</html>

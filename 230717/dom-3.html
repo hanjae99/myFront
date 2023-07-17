@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom3</title>
+  </head>
+  <body>
+    <div class="cat black">봄베이</div>
+    <div class="cat white">페르시안</div>
+    <div class="dog white">스피츠</div>
+    <script>
+      const cats = document.getElementsByClassName("cat");
+      for (i = 0; i < cats.length; i++) {
+        console.log(cats[i].innerHTML);
+      }
+      const colors = document.getElementsByClassName("white");
+      for (color of colors) {
+        console.log(color.innerHTML);
+      }
+    </script>
+  </body>
+</html>

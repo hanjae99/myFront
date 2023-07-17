@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>dom4</title>
+  </head>
+  <body>
+    <form action="get">
+      <input type="checkbox" name="dog" value="pome" />포메라니안<br />
+      <input type="checkbox" name="dog" value="dalma" />달마시안<br />
+      <input type="checkbox" name="dog" value="bool" />불독<br />
+    </form>
+    <script>
+      let dogs = document.getElementsByName("dog");
+      dogs[1].value = "kogi";
+      console.log(dogs[1].nextSibling.nodeValue);
+      dogs[1].nextSibling.nodeValue = "웰시코기";
+      console.log(dogs[1].nextSibling.nodeValue);
+      for (dog of dogs) {
+        console.log(dog.value);
+      }
+      let dogs2 = document.querySelectorAll("form");
+      console.log(dogs2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>getAttribute</title>
+    <style>
+      #container {
+        width: 800px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 200px);
+        grid-template-areas:
+          "box1 box3"
+          "box1 box4"
+          "box2 box5";
+      }
+      #container ul {
+        list-style: none;
+      }
+      #imgs > img {
+        width: 400px;
+        height: 400px;
+        grid-area: box1;
+      }
+      #subImgs {
+        display: flex;
+        grid-area: box2;
+        justify-content: space-between;
+      }
+      #subImgs img {
+        width: 130px;
+      }
+      .box3 {
+        grid-area: box3;
+      }
+      .box3 li {
+        margin-bottom: 10px;
+      }
+      .box4 {
+        grid-area: box4;
+        display: flex;
+      }
+      .box4 button {
+        width: 100%;
+        height: 70px;
+        align-self: center;
+        margin: 0 10px;
+      }
+      .box5 {
+        grid-area: box5;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>에디오피아 게뎁</h1>
+    <div id="container">
+      <div id="imgs">
+        <img
+          id="cup"
+          src="../images/coffee-pink.jpg"
+          alt="coffee"
+          onclick="displaySrc()"
+        />
+        <div id="subImgs">
+          <img
+            src="../images/coffee-blue.jpg"
+            alt="subCoffee1"
+            class="subImg"
+          />
+          <img
+            src="../images/coffee-gray.jpg"
+            alt="subCoffee2"
+            class="subImg"
+          />
+          <img
+            src="../images/coffee-pink.jpg"
+            alt="subcoffee3"
+            class="subImg"
+          />
+        </div>
+      </div>
+
+      <div class="box3">
+        <ul>
+          <li>상품명: 에디오피아 게뎁</li>
+          <li>판매가: 9000</li>
+          <li>배송비: 3000</li>
+          <li>(50000만 이상 구매시 무료)</li>
+          <li>적립금: 180원</li>
+          <li>로스팅: 2019.07.14</li>
+        </ul>
+      </div>
+      <div class="box4"><button>장바구니 담기</button></div>
+      <div class="box5">
+        <a href="#">상세 설명 보기</a>
+      </div>
+    </div>
+    <script>
+      function displaySrc() {
+        const cup = document.querySelector("#cup");
+        alert(`이미지 소스: ${cup.getAttribute("src")}`);
+      }
+      const cup = document.querySelector("#cup");
+      const smallCups = document.querySelectorAll(".subImg");
+      console.log(smallCups);
+      // 작은 컵 이미지들에 이벤트리스너 각각 부여
+      for (let i = 0; i < smallCups.length; i++) {
+        smallCups[i].addEventListener("click", changePic);
+      }
+      // 작은 컵 이미지 클릭 시 해당 이미지가 메인이미지가 되도록 설정
+      function changePic() {
+        const newPic = this.src;
+        cup.setAttribute("src", newPic);
+      }
+    </script>
+  </body>
+</html>

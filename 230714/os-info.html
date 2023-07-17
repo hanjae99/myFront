@@ -28,11 +28,16 @@
       const scr_h = scr.height;
       const avail_w = scr.availWidth;
       const avail_h = scr.availHeight;
+      const colorDepth = scr.colorDepth;
+      const pixelDepth = scr.pixelDepth;
+
       // document.write("모니터 해상도 너비: " + scr_w + "px<br>");
       document.write(`모니터 해상도 너비: ${scr_w}px<br>`);
       document.write("모니터 해상도 높이: " + scr_h + "px<br>");
       document.write(`UI영역제외 너비: ${avail_w}px<br>`);
       document.write(`UI영역제외 높이: ${avail_h}px<br>`);
+      document.write(`화면의 색상 심도: ${colorDepth}<br>`);
+      document.write(`화면의 픽셀 심도: ${pixelDepth}<br>`);
     </script>
   </body>
 </html>

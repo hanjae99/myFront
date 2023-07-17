@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>domEvent</title>
+  </head>
+  <body>
+    <img src="../images/cup-1.png" alt="cup" id="cup" />
+    <script>
+      const cup = document.getElementById("cup");
+      // DOM 요소에 함수 직접 연결
+      // cup.onclick = () => {
+      //   alert("이미지를 클릭했습니다.");
+      // };
+
+      // 요소에 함수 이름을 통해 연결
+      function IsClick() {
+        alert("이미지를 클릭했습니다");
+      }
+      cup.onclick = IsClick;
+    </script>
+  </body>
+</html>

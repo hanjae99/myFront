@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>domEvent3</title>
+  </head>
+  <body>
+    <img src="../images/cup-1.png" alt="cup1" id="cup" />
+    <script>
+      const cup = document.getElementById("cup");
+      cup.addEventListener("mouseover", () => {
+        cup.setAttribute("src", "../images/cup-2.png");
+      });
+      cup.addEventListener("mouseout", () => {
+        cup.setAttribute("src", "../images/cup-1.png");
+      });
+    </script>
+  </body>
+</html>

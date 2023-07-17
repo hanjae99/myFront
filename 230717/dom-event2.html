@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>domEvent2</title>
+  </head>
+  <body>
+    <img src="../images/cup-2.png" alt="cup" id="cup" />
+    <div>
+      <p id="text1"></p>
+      <p id="text2"></p>
+    </div>
+    <script>
+      const cup = document.getElementById("cup");
+      cup.onclick = function (event) {
+        document.getElementById(
+          "text1"
+        ).innerText = `이벤트 유형: ${event.type}, 이벤트 발생 위치(화면): ${event.screenX}, ${event.screenY}`;
+        document.getElementById(
+          "text2"
+        ).innerText = `이벤트 유형: ${event.type}, 이벤트 발생 위치(브라우저): ${event.pageX}, ${event.pageY}`;
+      };
+    </script>
+  </body>
+</html>

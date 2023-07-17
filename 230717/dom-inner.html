@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>domInner</title>
+  </head>
+  <body>
+    <button onclick="innrText()">innerText</button>
+    <button onclick="innrHTML()">innerHTML</button>
+    <h1>현재 시간</h1>
+    <div id="current"></div>
+    <script>
+      function innrText() {
+        let now = new Date();
+        document.getElementById("current").innerText = "<em>" + now + "</em>";
+        // setInterval(innerText, 1000);
+      }
+      function innrHTML() {
+        let now = new Date();
+        document.getElementById("current").innerHTML = "<em>" + now + "</em>";
+        // setInterval(innerHTML, 1000);
+      }
+    </script>
+  </body>
+</html>

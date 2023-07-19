@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>classNameCSS</title>
+    <style>
+      .change {
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title">Javascript</h1>
+    <script>
+      const title = document.getElementById("title");
+      title.addEventListener("mouseover", () => {
+        title.className = "change";
+      });
+      title.addEventListener("mouseout", () => {
+        title.className = "";
+      });
+    </script>
+  </body>
+</html>

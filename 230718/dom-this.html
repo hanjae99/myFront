@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>domThis</title>
+  </head>
+  <body>
+    <img src="../images/dish3.jpg" alt="dish" id="dish" />
+    <script>
+      const dish = document.getElementById("dish");
+      dish.addEventListener("click", function (event) {
+        alert(`클릭한 이미지: ${this.src}`);
+      });
+    </script>
+  </body>
+</html>

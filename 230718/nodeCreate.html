@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nodeCreate</title>
+  </head>
+  <body>
+    <h1>Web programming</h1>
+    <p>공부할 주제를 기록해 보세요</p>
+    <form>
+      <input type="text" id="moreStudy" autofocus />
+      <button onclick="registerSub(); return false;">추가</button>
+    </form>
+    <ul id="studyList"></ul>
+    <script>
+      function registerSub() {
+        const newSub = document.createElement("li");
+        const subject = document.getElementById("moreStudy");
+        const subText = document.createTextNode(subject.value);
+        newSub.appendChild(subText);
+
+        const studylist = document.getElementById("studyList");
+        studylist.appendChild(newSub);
+
+        subject.value = "";
+
+        const items = document.querySelectorAll("li");
+        for (let i = 0; i < items.length; i++) {
+          items[i].addEventListener("click", function () {
+            if (this.parentNode) {
+              this.parentNode.removeChild(this);
+            }
+          });
+        }
+      }
+    </script>
+  </body>
+</html>

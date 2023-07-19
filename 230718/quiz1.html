@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz1</title>
+    <style>
+      #list {
+        list-style: "✓";
+      }
+      /* #list li:before {
+        content: "✓";
+      } */
+    </style>
+  </head>
+  <body>
+    <h1>할 일 목록</h1>
+    <ul id="list">
+      <li class="check">할 일 1</li>
+      <li class="check">할 일 2</li>
+      <li class="check">할 일 3</li>
+      <li class="check">할 일 4</li>
+      <li class="check">할 일 5</li>
+    </ul>
+    <script>
+      const checkItems = document.querySelectorAll(".check");
+      for (let i = 0; i < checkItems.length; i++) {
+        checkItems[i].addEventListener("click", function () {
+          this.style.textDecoration = "line-through";
+          this.style.color = "#ccc";
+        });
+      }
+    </script>
+  </body>
+</html>

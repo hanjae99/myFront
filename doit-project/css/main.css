@@ -1,0 +1,253 @@
+@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: 0;
+}
+a {
+  text-decoration: none;
+}
+ul {
+  list-style: none;
+}
+#container {
+  margin: 0 auto;
+  width: 1200px;
+}
+header {
+  width: 100%;
+  height: 100px;
+  background-color: rgba(32, 99, 255, 0.738);
+  display: flex;
+}
+#logo {
+  width: 250px;
+  height: 100px;
+  text-align: center;
+  line-height: 100px;
+}
+#logo h1 {
+  font-family: "Bagel Fat One", cursive;
+  font-size: 2em;
+  color: white;
+  text-shadow: 0 5px 0 #222;
+}
+#navbar {
+  width: 100%;
+}
+#topMenu {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+}
+#topMenu > li {
+  position: relative;
+}
+#topMenu > li > a {
+  display: block;
+  font-weight: 600;
+  padding-bottom: 10px;
+}
+#topMenu > li > a > span {
+  margin-left: 5px;
+}
+#topMenu > li > a:hover {
+  color: black;
+  text-shadow: 0 -1px #07c;
+}
+#topMenu > li > ul {
+  display: none;
+  position: absolute;
+  width: 140px;
+  background-color: rgba(255, 255, 255, 0.6);
+  left: -40px;
+  margin: 0;
+  z-index: 10;
+}
+#topMenu > li > ul > li {
+  padding: 10px 10px 10px 30px;
+}
+#topMenu > li > ul > li > a {
+  font-size: 14px;
+  padding: 10px;
+  color: black;
+}
+#topMenu > li:hover > ul {
+  display: block;
+}
+#topMenu > li > ul > li > a:hover {
+  color: red;
+}
+#slideShow {
+  width: 100%;
+  height: 300px;
+  position: relative;
+  overflow: hidden;
+}
+#slides {
+  position: absolute;
+  height: 300px;
+}
+#slides > img {
+  float: left;
+  width: 100%;
+}
+#slides > button {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  border: none;
+  padding: 20px;
+  background-color: transparent;
+  color: #222;
+  font-weight: 800;
+  font-size: 24px;
+  opacity: 0.5;
+}
+#slides > button:hover {
+  background-color: #222;
+  color: white;
+  opacity: 0.6;
+  cursor: pointer;
+}
+#prev {
+  left: 0;
+}
+#next {
+  right: 0;
+}
+#contents {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  margin-top: 10px;
+}
+#tabMenu {
+  width: 50%;
+  height: 100%;
+  float: left;
+  margin-top: 10px;
+}
+#tabMenu input[type="radio"] {
+  display: none;
+}
+#tabMenu label {
+  display: inline-block;
+  margin: 0 0;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #aaa;
+  border: 1px solid transparent;
+}
+#tabMenu label:hover {
+  color: #222;
+  cursor: pointer;
+}
+#tabMenu input:checked + label {
+  color: rgb(18, 18, 18);
+  border: 1px solid #ddd;
+  background-color: #eee;
+}
+.tabContent {
+  display: none;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+.tabContent h2 {
+  display: none;
+}
+#notice ul {
+  list-style: disc;
+  margin-left: 30px;
+}
+#notice ul li {
+  font-size: 16px;
+  line-height: 2.5;
+}
+#gallery ul li {
+  display: inline;
+}
+#tab1:checked ~ #notice,
+#tab2:checked ~ #gallery {
+  display: block;
+}
+#links {
+  width: 50%;
+  height: 100%;
+  float: right;
+}
+#links ul {
+  padding: 0;
+  overflow: hidden;
+  margin-top: 30px;
+}
+#links ul li {
+  float: left;
+  width: 33%;
+  text-align: center;
+  margin: 10px 0;
+}
+#links ul li a span {
+  display: block;
+  margin: 0 auto;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  line-height: 150px;
+}
+#quick-icon1 {
+  background-image: url("../images/icon-1.jpg");
+}
+#quick-icon2 {
+  background-image: url("../images/icon-2.jpg");
+}
+#quick-icon3 {
+  background-image: url("../images/icon-3.jpg");
+}
+#links ul li a p {
+  margin-top: 15px;
+  font-weight: 600;
+  color: #666;
+}
+footer {
+  width: 100%;
+  height: 100px;
+  border-top: 2px solid #222;
+}
+#bottomMenu {
+  display: flex;
+  width: 100%;
+  height: 20px;
+  position: relative;
+  margin-top: 10px;
+}
+#bottomMenu ul {
+  display: flex;
+}
+#bottomMenu > ul > li {
+  padding: 0 20px;
+  border-right: 1px solid #ccc;
+}
+#bottomMenu > ul > li:last-child {
+  border-right: none;
+}
+#sns {
+  position: absolute;
+  right: 0;
+}
+#sns ul li {
+  margin-left: 10px;
+}
+#company {
+  margin-top: 25px;
+  margin-left: 20px;
+}
+#company p {
+  font-size: 14px;
+  color: #aaa;
+}

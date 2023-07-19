@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>quiz2</title>
+    <style>
+      #container {
+        width: 500px;
+        height: 500px;
+        margin: 50px 10px;
+      }
+      .maintable {
+        border: 1px solid #ccc;
+        border-collapse: collapse;
+      }
+      .maintable td {
+        border: 1px solid #ccc;
+        width: 150px;
+        height: 40px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <input type="text" autofocus id="rows" />행
+      <input type="text" id="columns" />열
+      <button
+        type="button"
+        id="tablebtn"
+        onclick="createTable(); return false;"
+      >
+        작성
+      </button>
+    </form>
+    <div id="container"></div>
+    <script>
+      function createTable() {
+        const container = document.getElementById("container");
+        if (container.childElementCount > 0) {
+          // console.log(container.firstChild);
+          container.removeChild(container.firstChild);
+        }
+        const table = document.createElement("table");
+        const rows = document.getElementById("rows");
+        const columns = document.getElementById("columns");
+        console.log(rows.value);
+        console.log(columns.value);
+        for (let i = 0; i < rows.value; i++) {
+          const row = document.createElement("tr");
+          for (let j = 0; j < columns.value; j++) {
+            const column = document.createElement("td");
+            const text = document.createTextNode(`${i}, ${j}`);
+            column.appendChild(text);
+            row.appendChild(column);
+          }
+          table.appendChild(row);
+        }
+        container.appendChild(table);
+        table.className = "maintable";
+      }
+    </script>
+  </body>
+</html>

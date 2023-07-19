@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nodeList2</title>
+  </head>
+  <body>
+    <h1>DOM을 공부하자</h1>
+    <a href="#" id="detail">더보기</a>
+    <script>
+      document
+        .getElementById("detail")
+        .addEventListener("click", function add() {
+          const newElem = document.createElement("p");
+          const newText = document.createTextNode("DOM은 document... 줄임말..");
+          newElem.appendChild(newText);
+          document.body.appendChild(newElem);
+          document.getElementById("detail").removeEventListener("click", add);
+
+          const newImg = document.createElement("img");
+          const ImgSrc = document.createAttribute("src");
+          const ImgAlt = document.createAttribute("alt");
+          ImgSrc.value = "../images/dom.jpg";
+          ImgAlt.value = "돔 예제 이미지";
+          newImg.setAttributeNode(ImgSrc);
+          newImg.setAttributeNode(ImgAlt);
+          document.body.appendChild(newImg);
+        });
+    </script>
+  </body>
+</html>

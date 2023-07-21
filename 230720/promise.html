@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise</title>
+  </head>
+  <body>
+    <script>
+      console.log("A");
+      console.log("B");
+      console.log("C");
+
+      //비동기처리
+      console.log("A");
+      setTimeout(() => {
+        console.log("B");
+      }, 0);
+      console.log("C");
+    </script>
+  </body>
+</html>

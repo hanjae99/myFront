@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise7</title>
+  </head>
+  <body>
+    <script>
+      function buyAsync(name, myMoney) {
+        return new Promise((resolve, reject) => {
+          setTimeout(function () {
+            const payments = parseInt(
+              prompt(`${name}님 지불하고자 하는 금액을 입력하세요`)
+            );
+            const exchange = myMoney - payments;
+            if (exchange >= 0) {
+              console.log(`${name}: ${payments} 원 지불완료`);
+              resolve(exchange);
+            } else {
+              reject(`${name} 님, 소지금은 ${myMoney} 입니다. 구매 불가`);
+            }
+          }, 1000);
+        });
+      }
+      // buyAsync 함수가 다 실행될 때까지 resolve 값들을 배열로 저장해둠
+      // Promise.all([
+      //   buyAsync("kim", 500),
+      //   buyAsync("lee", 600),
+      //   buyAsync("park", 900),
+      // ])
+      //   .then((exchange) => {
+      //     console.log(exchange);
+      //   })
+      //   .catch((reject) => {
+      //     console.log(reject);
+      //   });
+
+      // race : 성공이던 실패던 맨 첫번째의 결과만 반환
+      Promise.race([
+        buyAsync("kim", 500),
+        buyAsync("lee", 500),
+        buyAsync("park", 900),
+      ])
+        .then((exchange) => {
+          console.log(exchange);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>

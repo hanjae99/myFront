@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>domForm</title>
+    <script src="../js/elt.js"></script>
+  </head>
+  <body>
+    <script>
+      function add() {
+        const head = elt("h1", null, "설문조사");
+        const form = elt("form", { id: "menu" });
+        const question = elt("input", { type: "text", id: "quest" });
+        const questionLabel = elt("label", { for: "quest" }, "이름");
+        const radio1 = elt("input", {
+          type: "radio",
+          id: "radio",
+          name: "sex",
+        });
+        const radio2 = elt(
+          "input",
+          { type: "radio", id: "radio", name: "sex" },
+          "여"
+        );
+        const radioLabel = elt("label", { for: "radio" }, "성별");
+        const bloodTypes = ["A형", "B형", "O형", "AB형"];
+        const select = elt("select", { name: "bloodType", id: "bloodType" });
+        const selectLabel = elt("label", { for: "bloodType" }, "혈액형");
+        const middleHead = elt("h2", null, "의견");
+        const br = elt("div", null);
+        document.body.appendChild(head);
+        bloodTypes.forEach((type) => {
+          select.appendChild(elt("option", null, type));
+        });
+        form.appendChild(questionLabel);
+        form.appendChild(question);
+        form.appendChild(br);
+        form.appendChild(radioLabel);
+        form.appendChild(radio1);
+        form.appendChild(radio2);
+        form.appendChild(br);
+        form.appendChild(selectLabel);
+        form.appendChild(select);
+        form.appendChild(br);
+        form.appendChild(middleHead);
+        document.body.appendChild(form);
+      }
+      add();
+    </script>
+  </body>
+</html>

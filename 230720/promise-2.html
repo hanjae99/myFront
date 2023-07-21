@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise2</title>
+  </head>
+  <body>
+    <script>
+      const promise = new Promise(function (resolve, reject) {
+        setTimeout(() => {
+          console.log("A");
+          resolve();
+        }, 1000);
+      });
+      // promise가 정상종료되면(reject가 없으면) 바로 다음에 실행
+      promise.then(function () {
+        console.log("B");
+        console.log("C");
+      });
+      // promise.then(function () {
+      //   console.log("C");
+      // });
+    </script>
+  </body>
+</html>

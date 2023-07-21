@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise8</title>
+    <script src="../js/elt.js"></script>
+  </head>
+  <body>
+    <script>
+      function add() {
+        const headLine = elt("h1", null, "DOM에 관하여");
+        const input = elt("input", { type: "button", value: "click" });
+        const bloodTypes = ["A형", "B형", "O형", "AB형"];
+        const form = elt("form", { id: "menu" });
+        const select = elt("select", { name: "bloodType", id: "bloodType" });
+
+        document.body.appendChild(headLine);
+        form.appendChild(select);
+        bloodTypes.forEach((type) => {
+          select.appendChild(elt("option", null, type));
+        });
+        document.body.appendChild(form);
+        document.body.appendChild(input);
+      }
+      add();
+    </script>
+  </body>
+</html>

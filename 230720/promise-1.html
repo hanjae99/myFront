@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>promise1</title>
+  </head>
+  <body>
+    <script>
+      // 콜백 함수를 받아서 1초뒤에 실행하는 sleep 함수
+      function sleep(callback) {
+        setTimeout(function () {
+          callback();
+        }, 1000);
+      }
+
+      // A, B, C 가 1초 간격으로 순서대로 처리
+      sleep(function () {
+        console.log("A");
+        sleep(function () {
+          console.log("B");
+          sleep(() => {
+            console.log("C");
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>multi</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+      $(() => {
+        // div#a 로 구체적으로 적어주면 아이디값이 a인 값을 다 가져옴
+        const divA = $("div#a").css("fontSize", "30px");
+        console.log(divA);
+
+        const divMain = $("div.main").css("fontStyle", "italic");
+        console.log(divMain);
+
+        const test1 = $("div h1").css("color", "orange");
+        console.log(test1);
+        const test2 = $("div > h1").css("textDecoration", "underLine");
+        console.log(test2);
+        $("span, .test, #b").css("color", "green");
+      });
+    </script>
+  </head>
+  <body>
+    <div class="card-body content">
+      <div id="a">1. Lorem, ipsum dolor.</div>
+      <div>2. Lorem ipsum dolor sit amet.</div>
+      <div class="test">3. Lorem ipsum dolor sit amet consectetur.</div>
+      <div class="test main">4. Lorem ipsum dolor sit amet.</div>
+      <div>
+        <span>5. Lorem ipsum dolor sit amet.</span>
+        <h1 id="a">6. Lorem ipsum dolor sit amet consectetur.</h1>
+      </div>
+      <div id="b">7. Lorem ipsum dolor sit amet.</div>
+      <div class="test">8. Lorem ipsum dolor sit amet.</div>
+      <div class="main">
+        9. Lorem ipsum dolor, sit amet consectetur adipisicing.
+      </div>
+      <div class="test">10. Lorem ipsum dolor sit amet consectetur.</div>
+      <div id="a">11. Lorem ipsum dolor sit amet.</div>
+      <div>
+        <h1>12. end</h1>
+      </div>
+    </div>
+  </body>
+</html>

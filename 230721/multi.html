@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>multi</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+      $(() => {
+        const all = $("*").css("color", "gray");
+        console.log(all);
+
+        // id 인 경우 유일한 선택자를 나타내므로
+        // 따로 에러는 안나지만 처음 한개만 처리
+        const a = $("#a").css("color", "orange");
+        console.log(a);
+
+        const clz = $(".test").css("color", "green");
+        console.log(clz);
+
+        const h1 = $("h1").css("color", "brown");
+        console.log(h1);
+      });
+    </script>
+  </head>
+  <body>
+    <div class="card-body content">
+      <div id="a">1. Lorem, ipsum dolor.</div>
+      <div>2. Lorem ipsum dolor sit amet.</div>
+      <div class="test">3. Lorem ipsum dolor sit amet consectetur.</div>
+      <div class="test main">4. Lorem ipsum dolor sit amet.</div>
+      <div>
+        <span>5. Lorem ipsum dolor sit amet.</span>
+        <h1 id="a">6. Lorem ipsum dolor sit amet consectetur.</h1>
+      </div>
+      <div id="b">7. Lorem ipsum dolor sit amet.</div>
+      <div class="test">8. Lorem ipsum dolor sit amet.</div>
+      <div class="main">
+        9. Lorem ipsum dolor, sit amet consectetur adipisicing.
+      </div>
+      <div class="test">10. Lorem ipsum dolor sit amet consectetur.</div>
+      <div id="a">11. Lorem ipsum dolor sit amet.</div>
+      <div>
+        <h1>12. Lorem ipsum dolor sit.</h1>
+      </div>
+    </div>
+  </body>
+</html>

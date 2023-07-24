@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event4</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+      $(() => {
+        let baseFontSize = 16;
+        $(".zoombtnZone > button").on({
+          click: zoomInOut,
+        });
+        function zoomInOut(e) {
+          if ($(e.target).hasClass("zoomOutBtn")) {
+            if (baseFontSize <= 8) {
+              return false;
+            }
+            baseFontSize--;
+          }
+          if ($(e.target).hasClass("originBtn")) {
+            baseFontSize = 16;
+          }
+          if ($(e.target).hasClass("zoomInBtn")) {
+            if (baseFontSize >= 30) {
+              return false;
+            }
+            baseFontSize++;
+          }
+          $(".fontSize").html(`${baseFontSize}px`);
+          $("body").css({ fontSize: `${baseFontSize}px` });
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <p class="zoombtnZone">
+      <button class="zoomOutBtn">-</button>
+      <button class="originBtn">100%</button>
+      <button class="zoomInBtn">+</button>
+    </p>
+    <p class="fontSize">16px</p>
+    <div id="wrap">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum distinctio
+      culpa laboriosam magnam similique illum ipsa nihil id ratione nostrum at
+      fugit, voluptatum reiciendis, odio modi vel minus enim unde! Porro iste
+      minus incidunt id dolorem, error, veritatis aliquam cupiditate recusandae
+      consequuntur voluptatibus inventore! Ex harum eos dolorem labore magni
+      aspernatur eveniet laboriosam voluptates perspiciatis dolorum a illum,
+      debitis architecto! Modi repellendus tenetur nemo sapiente eligendi, quo
+      suscipit odio nesciunt iure voluptates distinctio ratione esse debitis,
+      alias ea vel eveniet itaque porro veniam. Officia neque harum nemo, sed ea
+      porro. Consectetur accusamus repellendus inventore. Dolorem, omnis
+      pariatur, temporibus facilis quo numquam minima possimus dolores itaque
+      qui provident praesentium, velit quia adipisci ipsam reiciendis a quae
+      aliquid architecto vero nam debitis. Ad, sapiente? Vel nulla similique
+      possimus provident eaque quo enim veniam fugit quae natus, dolores porro
+      voluptas earum explicabo minima ratione laudantium perferendis! Obcaecati
+      nostrum vel porro quaerat magnam. Eligendi! Repellendus ratione illum
+      voluptatem quibusdam aspernatur earum veniam quia accusantium aut eaque
+      quaerat nam, ad quisquam. Delectus, eum molestiae eaque praesentium
+      incidunt, aperiam velit soluta optio est veritatis facere unde? Libero
+      maxime dolore possimus facere asperiores iste sit! Magnam, rerum! Maxime
+      nemo optio harum odit magnam quos placeat! Inventore delectus neque iure
+      voluptate aperiam aliquid dolor nulla ullam placeat tempora. Veniam, id
+      ab? Facilis aspernatur facere quibusdam magnam commodi labore ab saepe
+      reprehenderit iure tenetur ducimus, similique placeat, perferendis itaque,
+      recusandae praesentium accusantium? Earum blanditiis dolor quas soluta
+      praesentium doloribus? Debitis quasi corporis vitae aut incidunt. Minus
+      voluptatum corrupti nihil fugiat consectetur culpa! Alias sequi doloribus
+      laudantium, quae praesentium tenetur harum ipsum, nemo fuga in, excepturi
+      accusamus nostrum perspiciatis ratione. Voluptas excepturi velit alias.
+      Totam, deserunt aut ipsum quaerat, expedita quas distinctio illo accusamus
+      recusandae voluptatem hic! Obcaecati doloribus saepe soluta excepturi
+      voluptate, sed eius voluptates perspiciatis voluptatibus quaerat dicta?
+    </div>
+  </body>
+</html>

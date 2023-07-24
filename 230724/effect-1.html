@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>effect1</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+      $(() => {
+        $(".btn2").hide();
+        $(".btn1").on("click", function () {
+          $(".box").slideUp(500, "linear", () => {
+            $(".btn1").hide();
+            $(".btn2").show();
+          });
+        });
+        $(".btn2").on("click", function () {
+          $(".box").slideDown(500, "swing", () => {
+            $(".btn2").hide();
+            $(".btn1").show();
+          });
+        });
+        // slideUp, down 을 합해 놓음
+        $(".btn3").on("click", function () {
+          $(".box").slideToggle(500, "linear");
+        });
+        // 투명도 0.3 까지 빠르게 fade
+        $(".btn4").on("click", () => {
+          $(".box").fadeTo("fast", 0.3);
+        });
+        $(".btn5").on("click", () => {
+          $(".box").fadeTo("fast", 1);
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <button class="btn1">slideUp</button>
+      <button class="btn2">slideDown</button>
+    </p>
+    <p>
+      <button class="btn3">toggleSlide</button>
+    </p>
+    <p>
+      <button class="btn4">fadeTo(0.3)</button>
+      <button class="btn5">fadeTo(1)</button>
+    </p>
+    <div class="box">
+      <div class="content">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla quia enim
+        possimus quibusdam modi nisi, nostrum, aliquid consequatur quo dolores
+        illum similique vitae. Maxime numquam itaque dignissimos quasi
+        reprehenderit blanditiis!
+      </div>
+    </div>
+  </body>
+</html>

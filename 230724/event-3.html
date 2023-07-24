@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>event3</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+      $(() => {
+        // input 태그의 배경색 변겅
+        $("input[name='userId-1'], input[name='userPw-1']").on({
+          focus: function () {
+            $(this).css({ backgroundColor: "pink" });
+          },
+          blur: function () {
+            $(this).css({ backgroundColor: "#fff" });
+          },
+        });
+        // form 태그 전체의 배경색 변경
+        $("#fm-2").on({
+          focusin: function () {
+            $(this).css({ backgroundColor: "pink" });
+          },
+          focusout: function () {
+            $(this).css({ backgroundColor: "#fff" });
+          },
+        });
+      });
+    </script>
+  </head>
+  <body class="card-body">
+    <h1>focus/blur</h1>
+    <form action="#">
+      <div class="form-group">
+        <label for="userId-1">ID</label>
+        <input type="text" name="userId-1" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="userPw-1">PW</label>
+        <input type="password" name="userPw-1" class="form-control" />
+      </div>
+    </form>
+    <h1>focusIn/focusOut</h1>
+    <form action="#" id="fm-2">
+      <p class="form-group">
+        <label for="userId-2">ID</label>
+        <input type="text" name="userId-2" class="form-control" />
+      </p>
+      <p>
+        <label for="userPw-2">PW</label>
+        <input type="password" name="userPw-2" class="form-control" />
+      </p>
+    </form>
+  </body>
+</html>

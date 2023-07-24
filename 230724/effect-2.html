@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>effect2</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+      $(() => {
+        $(".btn1, .btn2").on({
+          click: (e) => {
+            if ($(e.target).hasClass("btn1")) {
+              $(".txt1").animate(
+                {
+                  marginLeft: "500px",
+                  fontSize: "30px",
+                },
+                2000,
+                "linear",
+                () => {
+                  alert("모션완료");
+                }
+              );
+            }
+            if ($(e.target).hasClass("btn2")) {
+              $(".txt2").animate(
+                {
+                  marginLeft: "+=50px",
+                },
+                1000
+              );
+            }
+          },
+        });
+        // $(".btn1").on("click", () => {
+        //   $(".txt1").animate(
+        //     {
+        //       marginLeft: "500px",
+        //       fontSize: "30px",
+        //     },
+        //     2000,
+        //     "linear",
+        //     () => {
+        //       alert("모션완료");
+        //     }
+        //   );
+        // $(".btn2").on("click", () => {
+        // $(".txt2").animate(
+        //   {
+        //     marginLeft: "+=50px",
+        //   },
+        //   1000
+        // );
+        // });
+        // });
+      });
+    </script>
+  </head>
+  <body>
+    <p>
+      <button class="btn1">버튼1</button>
+    </p>
+    <span class="txt1">"500px" 이동</span>
+    <p>
+      <button class="btn2">버튼2</button>
+    </p>
+    <span class="txt2">"50px" 이동</span>
+  </body>
+</html>

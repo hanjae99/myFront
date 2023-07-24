@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <style>
+      .container {
+        clear: both;
+        width: 1000px;
+        margin: 20px auto;
+      }
+      .container:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+      .data {
+        clear: both;
+      }
+      .data:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  </head>
+  <body>
+    <section class="container">
+      <h2>jquery 이벤트 메소드</h2>
+      <p>
+        ajaxStart(), ajaxStop(), ajaxComplete(), ajaxSuccess(), ajaxError(),
+        ajaxSend()
+      </p>
+      <h3>ajaxStart() : ajax 기능이 시작될 때 발생하는 이벤트</h3>
+      <h3>ajaxStop() : ajax 기능이 정지될 때 발생하는 이벤트</h3>
+      <h3>ajaxComplete() : ajax 기능이 완료될 때 발생하는 이벤트</h3>
+      <h3>ajaxSuccess() : ajax 기능이 성공 수행되었을 때 발생하는 이벤트</h3>
+      <h3>ajaxError() : ajax 기능이 실패 수행되었을 때 발생하는 이벤트</h3>
+      <h3>
+        ajaxSend() : ajax에 의해 데이터 전송 또는 수신이 이루어질 때 발생하는
+        이벤트
+      </h3>
+      <h2>이벤트 발생순서</h2>
+      <p>성공 수행시: start -> send -> success -> complete -> stop</p>
+      <p>실패 수행시: start -> send -> error -> stop</p>
+      <h2>데이터 로딩 메소드 - load()</h2>
+      <article class="data">
+        <input type="button" id="proc1" value="success button" />
+        <input type="button" id="proc2" value="error button" />
+        <br />
+        <div style="display: inline">log:</div>
+        <div id="log" style="display: inline"></div>
+        <br />
+        <div style="display: inline">result:</div>
+        <div id="result" style="display: inline"></div>
+      </article>
+    </section>
+    <script>
+      $(document).ready(function () {
+        $("#log").css({ display: "none" });
+      });
+      $(document)
+        .ajaxStart(function (evt, xhr, settings) {
+          $("#log")
+            .delay(500)
+            .fadeIn(500, function () {
+              $(this).text("start").delay(1000).fadeOut(500);
+            });
+        })
+        .ajaxStop(function (evt, xhr, settings) {
+          $("#log")
+            .delay(500)
+            .fadeIn(500, function () {
+              $(this).text("stop").delay(1000).fadeOut(500);
+            });
+        })
+        .ajaxSuccess(function (evt, xhr, settings) {
+          $("#log")
+            .delay(500)
+            .fadeIn(500, function () {
+              $(this).text("success").delay(1000).fadeOut(500);
+            });
+        })
+        .ajaxComplete(function (evt, xhr, settings) {
+          if (settings.url === "test.html") {
+            $("#log")
+              .delay(500)
+              .fadeIn(500, function () {
+                $(this).text("complete").delay(1000).fadeOut(500);
+              });
+          }
+        })
+        .ajaxError(function (evt, xhr, settings) {
+          $("#log")
+            .delay(500)
+            .fadeIn(500, function () {
+              $(this).text("error").delay(1000).fadeOut(500);
+            });
+        })
+        .ajaxSend(function (evt, xhr, settings) {
+          $("#log")
+            .delay(500)
+            .fadeIn(500, function () {
+              $(this).text("send").delay(1000).fadeOut(500);
+            });
+        });
+
+      $(document).ready(function () {
+        $("#proc1").click(function () {
+          $("#log").stop();
+          $("#result").load("test.html");
+        });
+        $("#proc2").click(function () {
+          $("#result").load("error.html");
+        });
+      });
+    </script>
+  </body>
+</html>

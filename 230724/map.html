@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>map</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  </head>
+
+  <body>
+    <script>
+      $(() => {
+        const arr1 = [
+          {
+            area: "서울",
+            name: "홍길동",
+          },
+          {
+            area: "부산",
+            name: "김철수",
+          },
+          {
+            area: "대전",
+            name: "이영희",
+          },
+          {
+            area: "제주",
+            name: "박태형",
+          },
+        ];
+
+        const arr2 = $.map(arr1, function (a, b) {
+          if (a.area === "서울") {
+            return a;
+          }
+        });
+        console.log(arr2);
+
+        const arr3 = $.grep(arr1, (a, b) => {
+          if (a.area === "서울") {
+            return true;
+          } else {
+            return false;
+          }
+        });
+        console.log(arr3);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax7</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+      $(() => {
+        $.ajax({
+          type: "GET",
+          url: "http://sample.bmaster.kro.kr/contacts",
+          beforeSend: function () {
+            console.log("before send");
+          },
+          success: function (data, status, xhr) {
+            console.log("---------done----------");
+            console.log(data);
+            console.log(status);
+            console.log(xhr);
+          },
+          error: function (xhr, status) {
+            console.log("---------fail----------");
+            console.log(status);
+            console.log(xhr);
+          },
+          complete: function (xhr, status) {
+            console.log("--------always-----------");
+            console.log(xhr);
+            console.log(status);
+          },
+        });
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

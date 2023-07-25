@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax9</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+      $(() => {
+        $("button[name='list']").click(function () {
+          location.assign("24ajax-5.html");
+        });
+        $("button[name='del']").click(function () {
+          const no = $("input[name='no']").val();
+
+          $.ajax({
+            method: "DELETE",
+            url: "https://sample.bmaster.kro.kr/contacts/" + no,
+            success: function (data) {
+              console.log("삭제 성공");
+              console.log(data);
+              // location.assign("24ajax-5.html");
+            },
+            error: function (error) {
+              console.log("삭제 실패");
+              console.log(error);
+            },
+          });
+        });
+
+        const urlSearch = new URLSearchParams(location.search);
+        urlNo = urlSearch.get("no");
+        console.log(urlNo);
+        // const query = window.location.search;
+        // const query2 = query.substring(4);
+        // console.log(query2);
+
+        $.ajax({
+          method: "GET",
+          url: "https://sample.bmaster.kro.kr/contacts/" + urlNo,
+          success: function (data) {
+            console.log("성공");
+            console.log(data);
+            $("input[name='name']").val(data.name);
+            $("input[name='tel']").val(data.tel);
+            $("input[name='address']").val(data.address);
+            $("input[name='no']").val(data.no);
+          },
+          error: function (error) {
+            console.log("실패");
+            console.log(error);
+          },
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="card-body">
+      <h3>게시물 상세보기</h3>
+      Name:
+      <input type="text" class="form-control" name="name" readonly />
+      Tel:
+      <input type="text" class="form-control" name="tel" readonly />
+      Address:
+      <input type="text" class="form-control" name="address" readonly />
+      <input type="hidden" name="no" />
+      <br />
+      <button class="btn btn-primary" name="list">LIST</button>
+      <button class="btn btn-danger" name="del">DELETE</button>
+    </div>
+  </body>
+</html>

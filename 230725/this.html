@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>this</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script>
+      $(() => {
+        const mythis = {
+          fname: "김",
+          lname: "자바",
+          // printfullnameF: function () {
+          //   console.log(this.fname, this.lname);
+          // },
+          // printfullnameA: () => {
+          //   console.log(this.fname, this.lname, this);
+          // },
+          // printfullnameFF: function () {
+          //   let a = function () {
+          //     console.log(this.fname, this.lname, this);
+          //   };
+          //   a();
+          // },
+          printfullnameFA: function () {
+            let a = () => {
+              console.log(this.fname, this.lname);
+            };
+            a();
+          },
+        };
+        // mythis.printfullnameF();
+        // 불러온 위치의 객체를 가르키는 this를 생성해서 해당객체의 값을 사용함
+        // mythis.printfullnameA();
+        // 화살표 함수는 this 생성하지 않아서 불러온위치에 만들어진 this를 참조함 만들어진 this가 없으면 window객체가 참조됨
+
+        // mythis.printfullnameFF();
+        // 2번째 펑션도 불러온위치의 객체를 가르키는 this를 생성하는데 불러온위치가 객체가아니여서 window객체가 참조됨
+        mythis.printfullnameFA();
+        // 화살표 함수는 this 생성하지 않아서 불러온위치에 만들어진 this를 참조함
+        // 첫번째 함수에서 만들어진 this가 있어서 mythis 객체가 참조되어 해당객체의 값을 사용함
+      });
+    </script>
+  </head>
+  <body></body>
+</html>

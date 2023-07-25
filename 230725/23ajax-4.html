@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax4</title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <style>
+      .container {
+        width: 1000px;
+        margin: 20px auto;
+        line-height: 2.8;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="container">
+      <h2>jQuery Ajax 데이터의 배열화 메소드 - serializeArray()</h2>
+      <article class="data">
+        <form>
+          <div><input type="text" name="a" value="1" id="a" /></div>
+          <div><input type="text" name="b" value="2" id="b" /></div>
+          <div><input type="hidden" name="c" value="3" id="c" /></div>
+          <div>
+            <textarea name="d" rows="8" cols="40">4</textarea>
+          </div>
+          <div>
+            <select name="e">
+              <option value="5" selected="selected">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+            </select>
+          </div>
+          <div>
+            <input type="checkbox" name="f" value="8" id="f" />
+          </div>
+          <div>
+            <input type="submit" name="g" value="전송" id="g" />
+          </div>
+        </form>
+        <br />
+        <div id="result"></div>
+      </article>
+    </section>
+    <script>
+      $(() => {
+        $("form").submit(function (evt) {
+          const data = $(this).serializeArray();
+          $("#result").text(data);
+          console.log(data);
+          evt.preventDefault();
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax8</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script>
+      $(() => {
+        $("#back").hide();
+        $("#send").on("click", function () {
+          const name = $("input[name='name']").val();
+          const tel = $("input[name='tel']").val();
+          const addr = $("input[name='address']").val();
+          console.log(`name: ${name}`);
+          console.log(`tel: ${tel}`);
+          console.log(`address: ${addr}`);
+
+          $.ajax({
+            method: "POST",
+            url: "https://sample.bmaster.kro.kr/contacts",
+            data: { name: name, tel: tel, address: addr },
+            success: function (data) {
+              console.log(data);
+              console.log(data.status);
+              $("#back").show();
+            },
+            error: function (error) {
+              console.log(error.status);
+            },
+          });
+        });
+        $("#back").on("click", function (evt) {
+          location.assign("24ajax-5.html");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="card-body">
+      <h3>게시물 추가</h3>
+      Name:
+      <input type="text" class="form-control" name="name" />
+      tel:
+      <input type="text" class="form-control" name="tel" />
+      Address:
+      <input type="text" class="form-control" name="address" />
+      <br />
+      <button class="btn btn-primary" id="send">ADD</button>
+      <button class="btn btn-primary" id="back">BackToList</button>
+    </div>
+  </body>
+</html>

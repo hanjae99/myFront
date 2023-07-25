@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>culturalSpaceInfo</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+  </head>
+  <body>
+    <div class="card-body">
+      <h2>서울시 문화공간</h2>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <td>ID</td>
+              <td>Sub_Name</td>
+              <td>Name</td>
+              <td>Tel</td>
+              <td>Address</td>
+              <td>EnterFee</td>
+              <td>photo</td>
+            </tr>
+          </thead>
+          <tbody id="container"></tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      $(() => {
+        // $.get(
+        //   "http://openapi.seoul.go.kr:8088/43666e6c75646c6739364e496a546b/json/culturalSpaceInfo/1/100/",
+        //   function (data) {
+        // console.log(data);
+        // data.culturalSpaceInfo.row.forEach(function (item, index) {
+        //   // console.log(item);
+        //   // console.log(index);
+        //   let temp = "<tr>";
+        //   temp += `<td>${item.NUM}</td>`;
+        //   temp += `<td>${item.SUBJCODE}</td>`;
+        //   temp += `<td>${item.FAC_NAME}</td>`;
+        //   temp += `<td>${item.PHNE}</td>`;
+        //   temp += `<td>${item.ADDR}</td>`;
+        //   temp += `<td>${item.ENTRFREE}</td>`;
+        //   temp += `<td><img src="${item.MAIN_IMG}" alt="문화공간 사진" width="50px" height="50px"/></td>`;
+        //   temp += "</tr>";
+        //   $("#container").append(temp);
+        //     });
+        //   }
+        // );
+        $.ajax({
+          type: "GET",
+          url: "http://openapi.seoul.go.kr:8088/43666e6c75646c6739364e496a546b/json/culturalSpaceInfo/1/100/",
+          // data: { pageno: 1, pageSize: 10 },
+          dataType: "json",
+          success: function (data) {
+            // console.log(data);
+            data.culturalSpaceInfo.row.forEach(function (item, index) {
+              // console.log(item);
+              // console.log(index);
+              let temp = "<tr>";
+              temp += `<td>${item.NUM}</td>`;
+              temp += `<td>${item.SUBJCODE}</td>`;
+              temp += `<td>${item.FAC_NAME}</td>`;
+              temp += `<td>${item.PHNE}</td>`;
+              temp += `<td>${item.ADDR}</td>`;
+              temp += `<td>${item.ENTRFREE}</td>`;
+              temp += `<td><img src="${item.MAIN_IMG}" alt="문화공간 사진" width="50px" height="50px"/></td>`;
+              temp += "</tr>";
+              $("#container").append(temp);
+            });
+          },
+          error: function (error) {
+            console.log(error);
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ajax5</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-latest.js"></script>
+    <style>
+      .card-body > h2 {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card-body">
+      <h2>콘솔을 확인하세요</h2>
+      <button class="btn btn-primary" id="addBtn">ADD</button>
+      <div>
+        <table class="table">
+          <thead>
+            <tr>
+              <td>ID</td>
+              <td>Name</td>
+              <td>Tel</td>
+              <td>Address</td>
+              <td>Photo</td>
+            </tr>
+          </thead>
+          <tbody id="container"></tbody>
+        </table>
+      </div>
+    </div>
+    <script>
+      $(() => {
+        $.get(
+          "http://sample.bmaster.kro.kr/contacts",
+          { pagerno: 1, pagesize: 10 },
+          function (data) {
+            console.log(data);
+            data.contacts.forEach(function (item, index) {
+              console.log(item);
+              console.log(index);
+              let temp = "<tr>";
+              temp += `<td>${item.no}</td>`;
+              temp += `<td><a href="28ajax-9.html?no=${item.no}">${item.name}</a></td>`;
+              temp += `<td>${item.tel}</td>`;
+              temp += `<td>${item.address}</td>`;
+              temp += `<td><img src="${item.photo}" alt="증명사진" width="50px" height="50px"/></td>`;
+              temp += "</tr>";
+              $("#container").append(temp);
+            });
+          }
+        );
+        $("#addBtn").on("click", function (evt) {
+          location.assign("27ajax-8.html");
+        });
+      });
+    </script>
+  </body>
+</html>

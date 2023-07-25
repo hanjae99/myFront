@@ -14,6 +14,34 @@
         $("button[name='list']").click(function () {
           location.assign("24ajax-5.html");
         });
+
+        // url 에서 no 값만 추출
+        const urlSearch = new URLSearchParams(location.search);
+        urlNo = urlSearch.get("no");
+        console.log(urlNo);
+        // const query = window.location.search;
+        // const query2 = query.substring(4);
+        // console.log(query2);
+
+        // 추출한 no 값에 대응되는 데이터의 다른 정보를 input 박스에 미리 입력시킴
+        $.ajax({
+          method: "GET",
+          url: "https://sample.bmaster.kro.kr/contacts/" + urlNo,
+          success: function (data) {
+            console.log("성공");
+            console.log(data);
+            $("input[name='name']").val(data.name);
+            $("input[name='tel']").val(data.tel);
+            $("input[name='address']").val(data.address);
+            $("input[name='no']").val(data.no);
+          },
+          error: function (error) {
+            console.log("실패");
+            console.log(error);
+          },
+        });
+
+        // delete 버튼 클릭시 데이터 삭제
         $("button[name='del']").click(function () {
           const no = $("input[name='no']").val();
 
@@ -30,30 +58,6 @@
               console.log(error);
             },
           });
-        });
-
-        const urlSearch = new URLSearchParams(location.search);
-        urlNo = urlSearch.get("no");
-        console.log(urlNo);
-        // const query = window.location.search;
-        // const query2 = query.substring(4);
-        // console.log(query2);
-
-        $.ajax({
-          method: "GET",
-          url: "https://sample.bmaster.kro.kr/contacts/" + urlNo,
-          success: function (data) {
-            console.log("성공");
-            console.log(data);
-            $("input[name='name']").val(data.name);
-            $("input[name='tel']").val(data.tel);
-            $("input[name='address']").val(data.address);
-            $("input[name='no']").val(data.no);
-          },
-          error: function (error) {
-            console.log("실패");
-            console.log(error);
-          },
         });
       });
     </script>

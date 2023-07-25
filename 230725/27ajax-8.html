@@ -11,8 +11,9 @@
     <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
     <script>
       $(() => {
-        $("#back").hide();
+        $("#back").hide(); /* list 로 돌아가는 버튼 처음엔 숨겨둠 */
         $("#send").on("click", function () {
+          // input 박스에 입력한 값 받아오기
           const name = $("input[name='name']").val();
           const tel = $("input[name='tel']").val();
           const addr = $("input[name='address']").val();
@@ -20,6 +21,7 @@
           console.log(`tel: ${tel}`);
           console.log(`address: ${addr}`);
 
+          // post 방식으로 데이터 전송 및 입력시키기
           $.ajax({
             method: "POST",
             url: "https://sample.bmaster.kro.kr/contacts",
@@ -27,13 +29,14 @@
             success: function (data) {
               console.log(data);
               console.log(data.status);
-              $("#back").show();
+              $("#back").show(); /* 데이터 전송 성공 시 리스트 버튼 재등장 */
             },
             error: function (error) {
               console.log(error.status);
             },
           });
         });
+        // 리스트 버튼 클릭시 리스트 목록 띄워주는 화면으로 돌아감
         $("#back").on("click", function (evt) {
           location.assign("24ajax-5.html");
         });

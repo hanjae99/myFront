@@ -36,16 +36,19 @@
     </div>
     <script>
       $(() => {
+        // get 방식으로 가져오기
         $.get(
           "http://sample.bmaster.kro.kr/contacts",
           { pagerno: 1, pagesize: 10 },
           function (data) {
+            // 가져온 data 의 구조 확인 후 원하는 요소 뽑아올 준비
             console.log(data);
             data.contacts.forEach(function (item, index) {
               console.log(item);
               console.log(index);
               let temp = "<tr>";
               temp += `<td>${item.no}</td>`;
+              // no 값으로 데이터를 삭제하기위해 url에 no 값을 실어 보냄
               temp += `<td><a href="28ajax-9.html?no=${item.no}">${item.name}</a></td>`;
               temp += `<td>${item.tel}</td>`;
               temp += `<td>${item.address}</td>`;
@@ -55,6 +58,7 @@
             });
           }
         );
+        // 클릭시 데이터를 추가할 수 있는 페이지로 이동하는 버튼
         $("#addBtn").on("click", function (evt) {
           location.assign("27ajax-8.html");
         });

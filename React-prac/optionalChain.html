@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>optionalChain</title>
+  </head>
+  <body>
+    <script>
+      // optional chain 도입 전
+      const userInfo = {
+        name: { first: "Lee", last: "hanjae" },
+        hobby: { most: "swim", soso: "game" },
+      };
+      const mostHobby = userInfo.hobby && userInfo.hobby.most;
+      console.log(mostHobby);
+
+      // 도입 후
+      const userInfo2 = {
+        name: { first: "Lee", last: "hanjae" },
+        hobby: { most: "swim", soso: "game" },
+      };
+      const mostHobby2 = userInfo2.hobby?.most;
+      console.log(mostHobby2);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>defaultParam</title>
+  </head>
+  <body>
+    <script>
+      function foo(param1 = 1, param2 = {}, param3 = "korean") {
+        console.log(param1, param2, param3);
+      }
+      foo(4, { name: "Hong-gildong" }, "american");
+      foo();
+
+      function foo2(height, weight, age) {
+        let height1 = height || 180;
+        let weight1 = weight || 80;
+        let age1 = age || 24;
+        console.log(height1, weight1, age1);
+      }
+      foo2(160, 60, 15);
+      foo2();
+    </script>
+  </body>
+</html>

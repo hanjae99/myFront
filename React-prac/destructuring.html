@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>destructuring</title>
+  </head>
+  <body>
+    <script>
+      const student1 = {
+        name: "Lee",
+        age: 24,
+        hobby: "swim",
+        addr: "eunpyung-gu",
+      };
+
+      console.log(student1);
+
+      const { name, age, hobby, addr } = student1;
+      console.log(name, age, hobby, addr);
+    </script>
+  </body>
+</html>

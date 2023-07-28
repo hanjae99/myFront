@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>nullCoalescing</title>
+  </head>
+  <body>
+    <script>
+      const nameA = null;
+      const userName = nameA || "guest";
+      console.log(userName);
+
+      const userName2 = nameA ?? "guest";
+      console.log(userName2);
+
+      const num = 0;
+      const msg = num ?? "undefined";
+      console.log(msg);
+
+      const msg2 = num || "undefined";
+      console.log(msg2);
+    </script>
+  </body>
+</html>

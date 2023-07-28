@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>shorthand</title>
+  </head>
+  <body>
+    <script>
+      const student1 = {
+        name: "Hong",
+        age: 25,
+      };
+      console.log(student1);
+
+      const name = "Kim";
+      const age = 19;
+      const student2 = {
+        name: name,
+        age: age,
+      };
+      console.log(student2);
+
+      // key, value의 변수명이 같을 경우 단축해서 작성 가능
+      const student3 = {
+        name,
+        age,
+      };
+      console.log(student3);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>spreadSyntax</title>
+  </head>
+  <body>
+    <script>
+      const obj = {
+        a: 10,
+        b: 20,
+      };
+
+      let newObj = { ...obj };
+      console.log(newObj);
+
+      newObj = { ...obj, c: 30, d: 40 };
+      console.log(newObj);
+
+      const arr = [10, 200, 30];
+      let newArr = [...arr, 50, 100];
+      console.log(newArr);
+    </script>
+  </body>
+</html>
